@@ -2,8 +2,8 @@ import { useSelector } from 'react-redux';
 
 const Balance = () => {
   
-	const balance = useSelector(state =>  state);
-
+	const balance = useSelector(state =>  state.balance);
+	
 	return <div>Balance: {balance}</div>;
 };
 

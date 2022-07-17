@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { depositAmount, withdrawAmount } from './actions.js';
+import { depositAmount, withdrawAmount } from './redux/actions/balance.actions.js';
 
 const Atm = () => {
 	const [amount, setAmount] = useState(0);
 
 	const dispatch = useDispatch();
 
-	const balance = useSelector(state => state);
+	const balance = useSelector(state => state.balance);
 
 	const deposit = () => {
 		dispatch(depositAmount(amount));
@@ -19,6 +19,7 @@ const Atm = () => {
 			return;
 		}
 		dispatch(withdrawAmount(amount));
+		
 	};
 
 	return (
